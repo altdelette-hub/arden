@@ -3,4 +3,6 @@ change to for sale
 create a branch for caldon house 
 create css folder
 import pictures #go thru library
-upload
+how to upload website
+create caldon branch
+learn co pilot
