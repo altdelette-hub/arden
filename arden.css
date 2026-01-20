@@ -91,6 +91,8 @@
             font-size: 16px;
             color: #fff;
             background: transparent;
+            min-width: 150px;
+            text-align: center;
             /*border: 2px solid #009688;
             border-radius: 25px;
             cursor: pointer;
