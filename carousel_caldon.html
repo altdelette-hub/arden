@@ -12,6 +12,57 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .navbar {
+            width: 100%;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(26, 26, 26, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #EEF5DB;
+            text-transform: uppercase;
+        }
+
+        .navbar ul li::after {
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #EEF5DB;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            max-height: 50px;
+            margin: 0 20px;
+        }
+
         body {
             background-color: #1a1a1a;
             display: flex;
@@ -19,6 +70,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            padding-top: 120px;
         }
 
         .carousel-container {
@@ -109,6 +161,26 @@
             border-radius: 5px;
             font-size: 14px;
             z-index: 10;
+        }
+
+        .carousel-stop {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000;
+            border: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-stop:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
 
         @media (max-width: 768px) {
@@ -256,6 +328,16 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <img src="lo.jpg" class="logo" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="arden_pics.html">Rent</a></li>
+            <li><a href="caldon.html">Sale</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
     <div class="carousel-container">
         <div class="carousel-slides" id="slides"></div>
         
@@ -266,6 +348,8 @@
 
         <div class="carousel-dots" id="dots"></div>
 
+        <button class="carousel-stop" id="stopBtn" onclick="toggleStop()">⏸ Stop</button>
+
         <div class="carousel-info">
             <span id="counter">1 / 41</span>
         </div>
@@ -274,6 +358,8 @@
     <script>
         let currentIndex = 0;
         const totalSlides = 41;
+        let autoPlayInterval;
+        let isPlaying = true;
 
         // Initialize carousel
         function initCarousel() {
@@ -295,7 +381,7 @@
             }
 
             // Auto-play
-            setInterval(nextSlide, 10000);
+            autoPlayInterval = setInterval(nextSlide, 6000);
         }
 
         function showSlide(index) {
@@ -327,6 +413,19 @@
         function goToSlide(index) {
             currentIndex = index;
             showSlide(currentIndex);
+        }
+
+        function toggleStop() {
+            const stopBtn = document.getElementById('stopBtn');
+            if (isPlaying) {
+                clearInterval(autoPlayInterval);
+                stopBtn.textContent = '▶ Play';
+                isPlaying = false;
+            } else {
+                autoPlayInterval = setInterval(nextSlide, 6000);
+                stopBtn.textContent = '⏸ Stop';
+                isPlaying = true;
+            }
         }
 
         // Start carousel

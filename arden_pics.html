@@ -1,138 +1,295 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two bedroom apartment for rent in South London</title>
+    <meta name="description" content="Apartment for rent on the seventh and eighth floors with panoramic view of London in Stockwell SW9.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #C0C0C0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(26, 26, 26, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            max-height: 50px;
+            margin: 0 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar ul li {
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #EEF5DB;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .navbar ul li::after {
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #EEF5DB;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .header-info {
+            background-color: #1a1a1a;
+            padding: 100px 20px 40px;
+            text-align: center;
+            border-bottom: 2px solid #EEF5DB;
+        }
+
+        .header-info h1 {
+            font-size: 48px;
+            color: #EEF5DB;
+            margin-bottom: 10px;
+        }
+
+        .header-info h2 {
+            font-size: 32px;
+            color: #EEF5DB;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 16px;
+            color: #EEF5DB;
+        }
+
+        .contact-info a {
+            color: #EEF5DB;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .description {
+            text-align: justify;
+            padding: 40px 20px;
+            border: 2px solid #EEF5DB;
+            background-color: rgba(180, 55, 55, 0.1);
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        .description p {
+            font-size: 16px;
+            color: #C0C0C0;
+        }
+
+        /* Tablet and smaller screens */
+        @media (max-width: 1024px) {
+            .header-info h1 {
+                font-size: 36px;
+            }
+
+            .header-info h2 {
+                font-size: 24px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 30px 15px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar ul {
+                gap: 15px;
+            }
+        }
+
+        /* Mobile screens */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .navbar ul {
+                margin-right: 0;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .navbar ul li a {
+                font-size: 12px;
+            }
+
+            .header-info {
+                padding: 80px 15px 30px;
+            }
+
+            .header-info h1 {
+                font-size: 28px;
+            }
+
+            .header-info h2 {
+                font-size: 18px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 10px;
+                padding: 20px 10px;
+            }
+
+            .description {
+                padding: 25px 15px;
+                margin: 0 auto 25px;
+                font-size: 14px;
+            }
+
+            .contact-info {
+                font-size: 14px;
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            .navbar ul li a {
+                font-size: 11px;
+            }
+
+            .header-info h1 {
+                font-size: 22px;
+            }
+
+            .header-info h2 {
+                font-size: 16px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 15px 10px;
+            }
+
+            .description {
+                padding: 20px 10px;
+                font-size: 13px;
+            }
+
+            .contact-info {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
 
 
-<HTML>
-
-<HEAD>
-<TITLE>Two bedroom apartment for rent in South London</TITLE>
-<META http-equiv=Content-Language content=en-gb>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<!-- <link rel="stylesheet" href="style.css" /> -->
-<style>  
-body 
-{ background-color: black;
- color:#C0C0C0;
-}
-navbar
-{width: 100%;
-	margin: auto;
-	padding:  35px 0;
-	display: flex;
-        justify-content: space-around;
-}
-.navbar ul li
-{ 
-list-style: none;
-display: inline-block;
-margin: 0 20px;
-position: relative;
-}
-.navbar ul li a
-{
-text-decoration:none;
-color: #EEF5DB;
-text-transform: uppercase;
-}
-.navbar ul li ::after
-{
-content:"";
-height: 3px;
-width: 0;
-background: #EEF5DB;
-position: absolute;
-left: 0;
-bottom: -10px;
-
-transition: 0.5s;
-}
-.navbar ul li :hover::after
-{
-width: 100%;
-
-}
-.container1	
-        {display: flex;
-          
-flex-direction: column;
-}
- img
- {display: block;
-  margin-left: auto;
-  margin-right: auto;
-width: 40%;
-
-height:40%;			
-} 
-.blagg 
-{text-align: justify;
-padding: 5px 20px;
-border: white solid 2px;
-background-color: black(180, 55, 55, 0.466);
-margin: 10px 300px;
-}
-  </style>
-
-</HEAD>
-
-
-<BODY>
+<body>
     <div class="navbar">
-      
-   
-<ul>
-    <li><a href="A_I.html">home</a></li>
-    <li><a href="#">rent</a></li>
-    <li><a href="#">sale </a></li>
-    <li><a href="#">contact</a></li>
-</ul>
+        <img src="lo.jpg" class="logo" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Rent</a></li>
+            <li><a href="caldon.html">Sale</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
 
+    <div class="header-info">
+        <h1>London</h1>
+        <h2>SW9</h2>
+        <div class="contact-info">
+            <p>Rent £520 pw</p>
+            <p>Available now</p>
+            <p>Call +44 7950 933858</p>
+            <p>+44 2081 80 7070</p>
+            <a href="https://goo.gl/maps/QbKqkQ75o4KNcJEf8">View Location</a>
+        </div>
+    </div>
 
+    <div class="gallery">
+        <img src="images/arden_images/arden (12).jpg" alt="Apartment living room">
+        <img src="images/arden_images/arden (13).jpg" alt="Apartment bedroom">
+        <img src="images/arden_images/arden (5).jpg" alt="Apartment kitchen">
+        <img src="images/arden_images/arden (4).jpg" alt="Apartment bathroom">
+        <img src="images/arden_images/arden (6).jpg" alt="Apartment view">
+        <img src="images/arden_images/arden (7).jpg" alt="Apartment detail">
+        <img src="images/arden_images/arden (8).jpg" alt="Apartment hallway">
+        <img src="images/arden_images/arden (9).jpg" alt="Apartment bedroom 2">
+        <img src="images/arden_images/arden (10).jpg" alt="Apartment space">
+        <img src="images/arden_images/arden (1).jpg" alt="Apartment exterior">
+        <img src="images/arden_images/arden (14).jpg" alt="Apartment amenities">
+    </div>
 
-</div>
+    <div class="description">
+        <p>Apartment for rent on the seventh and eighth floors with a panoramic view of London. Fully furnished to a high spec, secured by a serviced concierge and supported by CCTV. There is a full complement of white goods (dishwasher, washing machine, fridge and microwave.) Dampened wooden flooring throughout. Also included is a multimedia system with a 55 inch screen in the sitting room and two plasma screens (42 inch & 37 inch) in the bedrooms. Situated a 5 minutes walk from the Stockwell and Clapham North tube stations you are only a 20 minute ride from both the City of London and the West End.</p>
+    </div>
 
-<div class = "stockwell"
-<P > <h1>London </h1></P>
-<p> <h2>SW9</h2></p>
-
-
-
-
-
-Rent &pound;520 pw <br>
-<P> Available now</P>
-<P >call +44 7950 933858</P>
-<P> + 44 2081 80 7070 
-<br> 
-
-<A href="https://goo.gl/maps/QbKqkQ75o4KNcJEf8">Location</A></FONT></P>
-</div>
-<div  class = "container1"
-<div  class = "imago" 
-<P ><img src="images/arden_images/arden (12).jpg"
-
-style="height:700px;width:530px;" alt="25"/></P>
-<P ><img src="images/arden_images/arden (13).jpg"></P>
-<P ><IMG src="images/arden_images/arden (5).jpg" > </P>
-<P ><img src="images/arden_images/arden (4).jpg"></p>
-	
-<P><img src="images/arden_images/arden (6).jpg"></P>
-<P><img src="images/arden_images/arden (7).jpg"></P>
-<P ><img src="images/arden_images/arden (8).jpg"> </P>
-<P ><img src="images/arden_images/arden (9).jpg"> </P>
-<P ><img src="images/arden_images/arden (10).jpg"></P>	
-<P ><IMG src="images/arden_images/arden (1).jpg" 
-style="height:700px;width:530px;" alt="25"</P>
-
-<P ><img src="images/arden_images/arden (14).jpg"></P>
-</div>
-<div class = "blagg">
-<p>
-Apartment for rent on the seventh and eighth floors with a panoramic view of London. Fully furnished to a high spec, secured by a serviced concierge and supported by cctv. There is a full complement of not so white goods (dishwasher,washing machine, fridge and microwave.) Dampened Woodenflooring throughout. Also included is a multimedia system with a 55 inch screen in the sitting room and two plasma screens (42 inch; & 37 inch ;) in the bedrooms. Situated a 5 minutes walk from the Stockwell and Clapham North tube stations you are only a 20 minute ride from both the City of London and the West End </p>
-</div>
-
-<P r&nbsp;</P>
-<P >&nbsp;</P>
-<P> </P></P>
-<P >&nbsp;</P>
-<P  ></P></BODY>
-</HTML>
+</body>
+</html>
